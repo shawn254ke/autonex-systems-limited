@@ -1,5 +1,6 @@
+"use client";
+
 import React, { useEffect } from 'react';
-import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import InquiryForm from '../components/InquiryForm';
@@ -62,18 +63,6 @@ const Inquiry = () => {
 
   return (
     <>
-      <Head>
-        <title>Request a Quote | Autonex Smart Solutions</title>
-        <meta name="description" content="Submit your project details to Autonex Smart Solutions and receive a customized proposal for home automation, IIoT, and smart technology solutions." />
-        <meta name="keywords" content="request quote, home automation, IIoT solutions, smart technology, industrial automation" />
-        <meta name="author" content="Autonex Smart Solutions" />
-        <meta property="og:title" content="Request a Quote | Autonex Smart Solutions" />
-        <meta property="og:description" content="Submit your project details and get a tailored proposal from our team of experts." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/inquiry" />
-        <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
-      </Head>
-
       <Header />
 
       {/* Hero Section */}

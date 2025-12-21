@@ -15,10 +15,10 @@ export async function POST(request: NextRequest) {
       subject: "We've received your message - AutoNex Systems",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background-color: #ff6b35; padding: 30px; text-align: center;">
-            <h1 style="color: white; margin: 0;">🔧 AutoNex Systems Limited</h1>
-            <p style="color: white; margin: 5px 0; font-size: 14px;">Industry 4.0 • IIoT Solutions • Smart Automation</p>
-          </div>
+          <div style="display: inline-flex; align-items: center; gap: 15px;">
+              <img src="https://www.autonexsystemsltd.com/images/logo1.png" alt="AutoNex Logo" style="height: 50px; width: auto;" />
+              <h1 style="color: white; margin: 0; display: inline;">AutoNex Systems Limited</h1>
+            </div>
 
           <div style="padding: 30px; background-color: #ffffff;">
             <h2 style="color: #333;">Hi ${name},</h2>

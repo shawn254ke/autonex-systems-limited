@@ -62,11 +62,14 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-brand-blue"
+          className={cn(
+            "lg:hidden transition-colors",
+            isScrolled || !isHome ? "text-brand-blue" : "text-white"
+          )}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
         {/* Desktop Nav */}

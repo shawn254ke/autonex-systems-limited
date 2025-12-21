@@ -96,7 +96,7 @@ export default function Footer() {
               <div className="flex items-center">
                 <Mail className="text-brand-orange mr-3 h-5 w-5" />
                 <span className="text-brand-gray-300">
-                  info@autonexsmart.com
+                  info@autonexsystemsltd.com
                 </span>
               </div>
             </div>

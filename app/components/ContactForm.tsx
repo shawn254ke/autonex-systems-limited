@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "../lib/supabase";
 
 interface ContactFormData {
   name: string;
@@ -32,10 +33,44 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      // 🔁 Replace later with Server Action or API route
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Insert message into Supabase
+      const { data, error } = await supabase
+        .from('Messages')
+        .insert([
+          {
+            'Full_Name': formData.name,
+            'Email_address': formData.email,
+            'Company': formData.company || null,
+            'Message': formData.message,
+            'Status': false,
+          },
+        ])
+        .select();
 
-      console.log("Form submitted:", formData);
+      if (error) {
+        console.error('Supabase error:', error);
+        toast.error("Failed to send message. Please try again.");
+        return;
+      }
+
+      console.log('Message submitted successfully:', data);
+
+      // Send confirmation email
+      try {
+        await fetch('/api/send-contact-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            message: formData.message,
+          }),
+        });
+      } catch (emailError) {
+        console.error('Email notification failed:', emailError);
+        // Don't show error to user since the message was saved successfully
+      }
 
       toast.success("Message sent successfully! We'll get back to you soon.");
 
@@ -46,6 +81,7 @@ export default function ContactForm() {
         message: "",
       });
     } catch (error) {
+      console.error('Unexpected error:', error);
       toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);

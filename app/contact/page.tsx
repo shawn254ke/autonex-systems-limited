@@ -78,7 +78,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1">Email Us</h3>
-                  <p className="text-brand-gray-600">info@autonexsmart.com</p>
+                  <p className="text-brand-gray-600">info@autonexsystemsltd.com</p>
                 </div>
               </div>
 

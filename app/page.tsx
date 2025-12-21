@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-
+import { Analytics } from "@vercel/analytics/next"
 import Hero from './components/Hero';
 import ServiceCard from './components/ServiceCard';
 import TestimonialCard from './components/TestimonialCard';
@@ -82,7 +82,7 @@ const Index = () => {
   return (
     <>
       <Header />
-
+       <Analytics />
       {/* Hero Section */}
       <Hero
         title="Where Smart Systems Begin"

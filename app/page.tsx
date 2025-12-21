@@ -20,10 +20,10 @@ const Index = () => {
 
   const coreServices = [
     {
-      title: 'Access Control & IT Services',
-      description: 'From attendance tracking to secure room access, our custom access control solutions bring everything together in one place..',
+      title: 'Access Control & Parking Management',
+      description: 'From attendance tracking to parking management and secure room access, our custom access control solutions bring everything together in one place..',
       icon: <Database size={24} />,
-      link: '/services#it',
+      link: '/services#access-control',
       color: 'blue' as const,
     },
     {
@@ -87,7 +87,7 @@ const Index = () => {
       <Hero
         title="Where Smart Systems Begin"
         subtitle="We specialize in Access Control, Parking Management, Industrial automation, industrial IoT solutions, and smart technology integration that help transform how you live and work."
-        primaryAction={{ text: 'Explore Home Automation', href: '/services#homeauto' }}
+        primaryAction={{ text: 'Explore Parking Management', href: '/services#access-control' }}
         secondaryAction={{ text: 'Request a Quote', href: '/inquiry' }}
         tertiaryAction={{ text: 'Explore Our Services', href: '/services' }}
         backgroundImages={["https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&w=2000&q=80",
@@ -96,7 +96,8 @@ const Index = () => {
     { type: 'image', src: '/images/boom.jpg' },
     { type: 'video', src: '/videos/accesscontrol1.mp4' },
     { type: 'image', src: '/images/centurion boom.jpeg' },
-    { type: 'video', src: '/videos/rfid.mp4' },
+    { type: 'video', src: '/videos/industrial automation.mp4' },
+    { type: 'image', src: '/images/parking management.jpg'}
   ]}
       />
 

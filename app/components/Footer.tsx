@@ -36,6 +36,8 @@ export default function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="text-white hover:text-brand-orange transition-colors"
                 >
@@ -138,20 +140,15 @@ export default function Footer() {
 /* Supporting Data */
 /* -------------------- */
 
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Github,
-  Youtube,
-} from "lucide-react";
+// Brand icons from lucide-react are deprecated. Using react-icons instead.
+import { FaFacebook, FaTwitter, FaInstagram, FaGithub, FaYoutube , FaLinkedin } from "react-icons/fa";
 
 const socialIcons = [
-  { href: "#", icon: Facebook, label: "Facebook" },
-  { href: "#", icon: Twitter, label: "Twitter" },
-  { href: "#", icon: Instagram, label: "Instagram" },
-  { href: "#", icon: Github, label: "GitHub" },
-  { href: "#", icon: Youtube, label: "YouTube" },
+  { href: "https://www.facebook.com/autonexsmart", icon: FaFacebook, label: "Facebook" },
+  { href: "https://twitter.com/autonexsystems", icon: FaTwitter, label: "Twitter" },
+  { href: "https://www.instagram.com/autonexsmart", icon: FaInstagram, label: "Instagram" },
+  { href: "https://github.com/autonexsmart", icon: FaGithub, label: "GitHub" },
+  { href: "https://www.linkedin.com/company/autonex-systems-limited", icon: FaLinkedin, label: "LinkedIn" },
 ];
 
 const quickLinks = [

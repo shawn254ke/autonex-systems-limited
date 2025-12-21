@@ -40,7 +40,7 @@ export default function Hero({
   backgroundSlides,
   backgroundImages,
   backgroundImage = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-  intervalMs = 5000,
+  intervalMs = 8000,
 }: HeroProps) {
   // Build slides array: prefer `backgroundSlides`, then `backgroundImages`, finally fallback to `backgroundImage`
   const slides: BackgroundSlide[] = backgroundSlides && backgroundSlides.length > 0

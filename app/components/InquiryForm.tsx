@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "../lib/supabase";
 
 interface FormData {
   name: string;
@@ -41,8 +42,57 @@ export default function InquiryForm() {
     setIsSubmitting(true);
 
     try {
-      // Replace this with actual API POST request
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Insert data into Supabase
+      const { data, error } = await supabase
+        .from('quote requests')
+        .insert([
+          {
+            'Full name': formData.name,
+            'Email_Address': formData.email,
+            'Company': formData.company,
+            'Phone_No': formData.phone || null,
+            'Service_Type': formData.serviceType,
+            'Description': formData.projectDescription,
+            'Budget_Range': formData.budget || null,
+            'Project_Timeline': formData.timeline || null,
+            'Status': false,
+          },
+        ])
+        .select();
+
+      if (error) {
+        console.error('Supabase error details:', {
+          message: error.message,
+          details: error.details,
+          hint: error.hint,
+          code: error.code,
+        });
+        toast.error(`Submission failed: ${error.message || 'Please try again later.'}`);
+        return;
+      }
+
+      console.log('Successfully submitted:', data);
+
+      // Send email notification
+      try {
+        await fetch('/api/send-inquiry-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            phone: formData.phone,
+            serviceType: formData.serviceType,
+            projectDescription: formData.projectDescription,
+            budget: formData.budget,
+            timeline: formData.timeline,
+          }),
+        });
+      } catch (emailError) {
+        console.error('Email notification failed:', emailError);
+        // Don't show error to user since the inquiry was saved successfully
+      }
 
       toast.success(
         "Your inquiry has been submitted! Our team will contact you shortly."
@@ -50,6 +100,7 @@ export default function InquiryForm() {
 
       setFormData(initialFormData);
     } catch (err) {
+      console.error('Unexpected error:', err);
       toast.error("Submission failed. Please try again later.");
     } finally {
       setIsSubmitting(false);
@@ -147,7 +198,7 @@ export default function InquiryForm() {
             Select a service
           </option>
           <option value="industry40">Industry 4.0 Transformation</option>
-          <option value="iiot">IIoT Solutions</option>
+          <option value="iiot">Access Control & Parking Management</option>
           <option value="customIT">Custom IT Services</option>
           <option value="homeAutomation">Home Automation</option>
           <option value="other">Other</option>

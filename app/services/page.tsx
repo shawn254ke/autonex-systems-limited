@@ -54,7 +54,7 @@ function getStructuredData() {
       {
         '@type': 'Organization',
         '@id': 'https://autonexsystemsltd.com/#organization',
-        name: 'AutoNex Smart Solutions Limited',
+        name: 'AutoNex Systems Limited',
         url: 'https://autonexsystemsltd.com',
         logo: {
           '@type': 'ImageObject',
@@ -68,7 +68,7 @@ function getStructuredData() {
           availableLanguage: ['English', 'Swahili'],
         },
         sameAs: [
-          'https://www.linkedin.com/company/autonex-smart-solutions',
+          'https://www.linkedin.com/company/autonex-systems-limited',
           'https://twitter.com/autonexsystems',
         ],
       },

@@ -7,13 +7,13 @@ import "./globals.css";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Autonex Smart Solutions | Where Smart Systems Begin",
-  description: "We specialize in home automation, industrial IoT solutions, and smart technology integration to transform how you live and work.",
+  title: "Autonex Systems Limited | Where Smart Systems Begin",
+  description: "We specialize in Access Control, Parking Management, Industrial automation, industrial IoT solutions, and smart technology integration that help transform how you live and work.",
   keywords: "home automation, industrial IoT, smart technology, digital transformation, business solutions, access control, parking management",
-  authors: [{ name: "Autonex Smart Solutions" }],
+  authors: [{ name: "Autonex Systems Limited" }],
   openGraph: {
-    title: "Autonex Smart Solutions | Where Smart Systems Begin",
-    description: "We specialize in home automation, industrial IoT solutions, and smart technology integration.",
+    title: "Autonex Systems Limited | Where Smart Systems Begin",
+    description: "We specialize in Access Control, Parking Management, Industrial automation, industrial IoT solutions, and smart technology integration that help transform how you live and work.",
     type: "website",
     url: "https://autonexsystemsltd.com/",
     images: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "https://autonexsystemsltd.com/images/logo1.png",
         width: 1200,
         height: 630,
-        alt: "Autonex Smart Solutions",
+        alt: "Autonex Systems Limited",
       },
     ],
   },

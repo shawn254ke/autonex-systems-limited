@@ -91,7 +91,7 @@ export default function ServicesContent() {
               Smart Access Control & Parking Management Systems in Kenya
             </h2>
             <p className="text-lg text-brand-gray-600 mb-6">
-              AutoNex provides comprehensive access control and parking management solutions including boom barriers, bollards, RFID systems, biometric access control, and number plate recognition (LPR) across Kenya and East Africa. Our systems ensure secure, efficient, and automated control of vehicle and pedestrian movement.
+              AutoNex provides comprehensive access control and parking management solutions including boom barriers, bollards, RFID systems, biometric access control, and number plate recognition (LPR) across Kenya and East Africa.
             </p>
             
             <div className="space-y-6">
@@ -131,7 +131,7 @@ export default function ServicesContent() {
             <ImageSlider
               images={[
                 {
-                  src: '/images/Centurion boom.jpeg',
+                  src: '/images/centurion boom.jpeg',
                   alt: 'Centurion Sector Boom barriers installation in Kenya - automatic vehicle access control'
                 },
                 {
@@ -500,7 +500,7 @@ export default function ServicesContent() {
         </div>
       </section>
 
-      <Footer />
+      
     </>
   );
 }

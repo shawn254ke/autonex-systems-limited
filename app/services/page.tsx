@@ -4,10 +4,10 @@ import ServicesContent from './ServicesContent';
 
 // SEO Metadata
 export const metadata: Metadata = {
-  title: 'Industry 4.0, IIoT & IT Services | AutoNex Smart Solutions Kenya',
+  title: 'Access Control, Parking Management, Industry 4.0 & IT Services | AutoNex Systems Limited Kenya',
   description: 'Leading provider of Industry 4.0, Industrial IoT (IIoT), IT services, access control, parking management, and home automation solutions in Kenya and East Africa. Expert OEE monitoring, smart manufacturing, and gate automation.',
   keywords: 'Industry 4.0 Kenya, IIoT solutions Kenya, industrial automation East Africa, OEE monitoring, smart manufacturing, access control systems, parking management Kenya, boom barriers Kenya, gate automation, Centurion gates Kenya, home automation Kenya, industrial IoT solutions, smart factory Kenya, SCADA systems, PLC integration, biometric access control, RFID systems, number plate recognition Kenya, bollards Kenya, industrial cybersecurity, cloud integration Kenya, data analytics manufacturing, predictive maintenance, real-time dashboards, production monitoring, downtime tracking',
-  authors: [{ name: 'AutoNex Smart Solutions' }],
+  authors: [{ name: 'AutoNex Systems Limited' }],
   robots: {
     index: true,
     follow: true,
@@ -20,26 +20,32 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Industry 4.0, IIoT & IT Services | AutoNex Smart Solutions Kenya',
+    title: 'Access Control, Parking Management,Industry 4.0, IIoT & IT Services | AutoNex Systems Limited Kenya',
     description: 'Transform your operations with Industry 4.0, IIoT solutions, access control, parking management, and home automation. Expert industrial automation services in Kenya and East Africa.',
     type: 'website',
     url: 'https://autonexsystemsltd.com/services',
     locale: 'en_KE',
-    siteName: 'AutoNex Smart Solutions',
+    siteName: 'AutoNex Systems Limited',
     images: [
       {
-        url: 'https://autonexsystemsltd.com/images/OEE dashboard.png',
+        url: 'https://www.autonexsystemsltd.com/images/OEE%20dashboard.png',
         width: 1200,
         height: 630,
         alt: 'AutoNex Industry 4.0 and IIoT Solutions',
       },
+      {
+        url: 'https://www.autonexsystemsltd.com/images/centurion%20boom.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'AutoNex Access Control and Parking Management with Centurion Boom Barriers',
+      }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Industry 4.0, IIoT & IT Services | AutoNex Smart Solutions',
+    title: 'Access Control, Parking Management,Industry 4.0, IIoT & IT Services | AutoNex Systems Limited Kenya',
     description: 'Transform your operations with Industry 4.0, IIoT solutions, access control, and automation services in Kenya.',
-    images: ['https://autonexsystemsltd.com/images/OEE dashboard.png'],
+    images: ['https://www.autonexsystemsltd.com/images/boom.jpg'],
   },
   alternates: {
     canonical: 'https://autonexsystemsltd.com/services',
@@ -76,7 +82,7 @@ function getStructuredData() {
         '@type': 'WebPage',
         '@id': 'https://autonexsystemsltd.com/services#webpage',
         url: 'https://autonexsystemsltd.com/services',
-        name: 'Industry 4.0, IIoT & IT Services | AutoNex Smart Solutions Kenya',
+        name: 'Access Control, Parking Management,Industry 4.0, IIoT & IT Services | AutoNex Systems Limited Kenya',
         description: 'Comprehensive Industry 4.0, Industrial IoT, IT services, access control, parking management, and home automation solutions in Kenya and East Africa.',
         isPartOf: {
           '@id': 'https://autonexsystemsltd.com/#website',

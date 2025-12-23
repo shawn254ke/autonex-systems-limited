@@ -42,7 +42,7 @@ const slides = [
     icon: <GateIcon className="h-10 w-10" />,
     color: "blue",
     image:
-      "https://images.unsplash.com/photo-1571939228382-b2f2b585ce15",
+      "/images/Centurion Gate.png",
   },
   {
     title: "Smart Lighting Control",

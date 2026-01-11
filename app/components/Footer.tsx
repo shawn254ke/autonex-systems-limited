@@ -23,7 +23,7 @@ export default function Footer() {
           {/* Company Info */}
           <section className="space-y-4">
             <Link href="/" className="text-2xl font-bold">
-              Autonex Smart Solutions
+              Autonex Systems 
             </Link>
 
             <p className="text-brand-gray-300 max-w-xs">

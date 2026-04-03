@@ -101,7 +101,7 @@ const Index = () => {
           "Swing gate automation solutions for enhanced security and convenience.",
           "Maximize efficiency and security with intelligent parking solutions."
         ]}
-        primaryAction={{ text: 'Explore Parking Management', href: '/services#access-control' }}
+        // primaryAction={{ text: 'Explore Parking Management', href: '/services#access-control' }}
         secondaryAction={{ text: 'Request a Quote', href: '/inquiry' }}
         tertiaryAction={{ text: 'Explore Our Services', href: '/services' }}
         backgroundSlides={[

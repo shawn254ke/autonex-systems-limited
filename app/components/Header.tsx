@@ -24,7 +24,7 @@ export default function Header() {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Home Automation", path: "/catalog" },
+    // { name: "Home Automation", path: "/catalog" },
     { name: "Contact", path: "/contact" },
   ];
 

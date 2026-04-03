@@ -17,8 +17,8 @@ interface BackgroundSlide {
 }
 
 interface HeroProps {
-  title: string;
-  subtitle: string;
+  title?: string | string[];
+  subtitle?: string | string[];
   primaryAction?: Action;
   secondaryAction?: Action;
   tertiaryAction?: Action;
@@ -32,8 +32,8 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title,
-  subtitle,
+  title = "Welcome",
+  subtitle = "Discover what we offer",
   primaryAction,
   secondaryAction,
   tertiaryAction,
@@ -42,6 +42,9 @@ export default function Hero({
   backgroundImage = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
   intervalMs = 8000,
 }: HeroProps) {
+  const [index, setIndex] = useState(0);
+  const intervalRef = useRef<number | null>(null);
+
   // Build slides array: prefer `backgroundSlides`, then `backgroundImages`, finally fallback to `backgroundImage`
   const slides: BackgroundSlide[] = backgroundSlides && backgroundSlides.length > 0
     ? backgroundSlides
@@ -49,8 +52,13 @@ export default function Hero({
     ? backgroundImages.map(src => ({ type: 'image' as const, src }))
     : [{ type: 'image' as const, src: backgroundImage }];
 
-  const [index, setIndex] = useState(0);
-  const intervalRef = useRef<number | null>(null);
+  // Convert title and subtitle to arrays for easy indexing
+  const titles = Array.isArray(title) ? title : [title];
+  const subtitles = Array.isArray(subtitle) ? subtitle : [subtitle];
+
+  // Get current title and subtitle based on slide index, cycling if needed
+  const currentTitle = titles[index % titles.length];
+  const currentSubtitle = subtitles[index % subtitles.length];
 
   // Preload image slides
   useEffect(() => {
@@ -116,12 +124,18 @@ export default function Hero({
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
-            {title}
+          <h1 
+            key={`title-${index}`}
+            className="text-4xl md:text-6xl font-bold text-white mb-6 animate-slide-in-left"
+          >
+            {currentTitle}
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in">
-            {subtitle}
+          <p 
+            key={`subtitle-${index}`}
+            className="text-xl md:text-2xl text-white/90 mb-8 animate-slide-in-up"
+          >
+            {currentSubtitle}
           </p>
 
           <div className="flex flex-wrap gap-4 animate-fade-in">

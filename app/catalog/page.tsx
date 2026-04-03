@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
+import ImageSlider from '../components/ImageSlider';
 import { ChevronRight } from 'lucide-react';
 
 const Catalog = () => {
@@ -20,29 +21,32 @@ const Catalog = () => {
       id: 'gate-motor',
       name: 'Centurion D5 Evo Smart Gate Motor',
       description: 'Heavy-duty, reliable, and secure sliding gate motor ideal for residential and industrial use. Smart technology enables app control and status updates.',
-      image: 'https://placehold.co/400x300/e2e8f0/64748b?text=Gate+Motor',
-      price: 'R8,499',
+      media: [
+        { type: 'image' as const, src: '/images/Centurion D5 Evo Smarkt.png', alt: 'Gate Motor Front View' },
+      ],
+      price: 'KES 65000',
     },
     {
       id: 'remote-control',
       name: '4-Channel Remote Control',
       description: 'Sleek and compact remote control with four programmable buttons for controlling gates, lights, and automation devices.',
-      image: 'https://placehold.co/400x300/e2e8f0/64748b?text=Remote+Control',
-      price: 'R399',
+      media: [
+        { type: 'image' as const, src: '/images/remote-control-1.jpg', alt: 'Remote Control Front' },
+        { type: 'image' as const, src: '/images/remote-control-2.jpg', alt: 'Remote Control Back' },
+        { type: 'image' as const, src: '/images/remote-control-3.jpg', alt: 'Remote Control in Hand' },
+      ],
+      price: 'KES 3999',
     },
     {
       id: 'swing-gate',
       name: 'Swing Gate Automation System',
       description: 'Durable and quiet swing gate motors designed for double-leaf or single-leaf gates. Includes obstacle detection and battery backup.',
-      image: 'https://placehold.co/400x300/e2e8f0/64748b?text=Swing+Gate+System',
-      price: 'R11,999',
-    },
-    {
-      id: 'security-lock',
-      name: 'GLX 900 Security Lock',
-      description: 'High-security digital smart lock with fingerprint, code, and app access options. Perfect for residential and commercial properties.',
-      image: 'https://placehold.co/400x300/e2e8f0/64748b?text=Security+Lock',
-      price: 'R2,499',
+      media: [
+        { type: 'image' as const, src: '/images/swing-gate-1.jpg', alt: 'Swing Gate System Overview' },
+        { type: 'image' as const, src: '/images/swing-gate-2.jpg', alt: 'Swing Gate Motor Unit' },
+        { type: 'image' as const, src: '/images/swing-gate-3.jpg', alt: 'Swing Gate Installation' },
+      ],
+      price: 'KES 110000',
     },
   ];
 
@@ -52,7 +56,7 @@ const Catalog = () => {
         <title>Home Automation Catalog | Autonex</title>
         <meta
           name="description"
-          content="Explore Autonex home automation products, including gate motors, remote controls, swing gate systems, and security locks. Enhance your home or business automation today."
+          content="Explore Autonex home automation products, including gate motors, remote controls, and swing gate systems. Enhance your home or business automation today."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://yourdomain.com/catalog" />
@@ -76,11 +80,12 @@ const Catalog = () => {
           {homeAutomationProducts.map((product) => (
             <article key={product.id}>
               <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-200">
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
+                <div className="aspect-video overflow-hidden bg-gray-100">
+                  <ImageSlider 
+                    slides={product.media} 
+                    autoPlay={true}
+                    intervalMs={5000}
+                    showControls={true}
                   />
                 </div>
                 <CardHeader>

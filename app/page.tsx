@@ -85,18 +85,31 @@ const Index = () => {
        <Analytics />
       {/* Hero Section */}
       <Hero
-        title="Where Smart Systems Begin"
-        subtitle="We specialize in Access Control, Parking Management, Industrial automation, industrial IoT solutions, and smart technology integration that help transform how you live and work."
+        title={[
+          "Smart Access Control Solutions",
+          "Professional Access Management & Parking Systems",
+          "Boom Barriers Secure Access",
+          "Industrial Automation & IoT Solutions",
+          "Swing Gate Automation",
+          "Modern Parking Management"
+        ]}
+        subtitle={[
+          "Control who, when, and where with our advanced access control systems.",
+          "Streamline parking operations and ensure secure access with cutting-edge technology.",
+          "Boom Barriers and Bollards for malls, parking lots, and secure facilities.",
+          "Transform your production with Industry 4.0 automation and IoT integration.",
+          "Swing gate automation solutions for enhanced security and convenience.",
+          "Maximize efficiency and security with intelligent parking solutions."
+        ]}
         primaryAction={{ text: 'Explore Parking Management', href: '/services#access-control' }}
         secondaryAction={{ text: 'Request a Quote', href: '/inquiry' }}
         tertiaryAction={{ text: 'Explore Our Services', href: '/services' }}
-        backgroundImages={["https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&w=2000&q=80",
-           "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&w=2000&q=80"]}  
         backgroundSlides={[
     { type: 'image', src: '/images/boom.jpg' },
     { type: 'video', src: '/videos/accesscontrol1.mp4' },
     { type: 'image', src: '/images/centurion boom.jpeg' },
     { type: 'video', src: '/videos/industrial automation.mp4' },
+     { type: 'video', src: '/videos/Centurion Vantage 500 Swing Gate Automation.mp4' },
     { type: 'image', src: '/images/parking management.jpg'}
   ]}
       />

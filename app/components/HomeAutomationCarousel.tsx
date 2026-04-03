@@ -51,7 +51,7 @@ const slides = [
     icon: <Home className="h-10 w-10" />,
     color: "orange",
     image:
-      "https://images.unsplash.com/photo-1585909695284-32d2985ac9c0",
+      "/images/smartlights.jfif",
   },
   {
     title: "Smart Security Systems",

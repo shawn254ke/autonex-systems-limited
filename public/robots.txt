@@ -1,0 +1,13 @@
+# Allow all robots to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas (if you have any)
+Disallow: /admin
+Disallow: /private
+
+# Sitemap location
+Sitemap: https://autonexsystemsltd.com/sitemap.xml
+
+# Crawl delay for all bots (in seconds) - optional
+Crawl-delay: 1
